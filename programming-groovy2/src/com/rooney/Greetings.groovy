@@ -103,8 +103,34 @@ def log(x, base=10, String[] details) {
 	Math.log(x) / Math.log(base)
 }
 
-println log(1024) + " " + log(1024, 2) + " " + log(1024, 2, '123-456-7890') + " " + log(1024, 2, '123-456-7890', '231-546-0987')
+println log(1024) + " " + log(1024, 2) + " " + log(1024, 2, '123-456-7890') + " " + log(1024, 2, '123-456-7890', '231-546-0987') + "\n"
 
+
+
+//2.5 Using Multiple Assignments:  return an array and use comma-separated variables wrapped in parentheses on the left side of the assignment.
+def splitName(fullName) { fullName.split(' ') }
+(firstName, lastName) = splitName('James Bond')
+println "$lastName, $firstName $lastName"
+
+//swap fields using this
+def name1 = "AAA" 
+def name2 = "BBB"
+(nameBAR, nameFOO) = [name1, name2] 
+println "$nameFOO and $nameBAR"
+
+//it handle excess and missing vars
+(nameA) = [name1, name2]
+(nameY, nameX) = [name2]
+println "$nameX  $nameY"  //nameX is null. we get a 
+
+//can't handle missing vars if using primitives
+//int intX, intY
+//(intY, intX) = [1]
+//println "$intX, $intY" org.codehaus.groovy.runtime.typehandling.GroovyCastException: Cannot cast object 'null' with class 'null' to class 'int'. Try 'java.lang.Integer' instead
+
+
+
+//2.6 Implementing Interfaces
 
 
 
