@@ -1,13 +1,43 @@
 package com.rooney
 
-//Note: Methods and classes are public by default.
-//		single quote strings
+import java.awt.event.ActionListener
+import java.awt.event.FocusListener
+import java.awt.event.MouseListener
+import java.awt.event.MouseMotionListener
+
+import javax.swing.JButton
+import javax.swing.JFrame
+import javax.swing.JOptionPane
+
+//Methods and classes are public by default.
+//single quote strings
+//String sub using $xxx
+//[A:1, B:2] for map
+//[A,B,C] for list
+// 'as' operator to supply closure or map of closures for interface impl 
+// {xxx} curly brackets for closures
+// Strings are evaluated before executed and can contain statements: "System.out".println("xx")
+//
+/* Booleans - implementing an asBoolean() method in our classes.
+Boolean 		True
+Collection 		Not empty
+Character 		Value not 0
+CharSequence 	Length greater than 0
+Enumeration 	Has more elements
+Iterator 		Has next
+Number			Double value not 0
+Map				Not empty
+Matcher			At least one match
+Object[]		Length greater than 0
+Any other type	Reference not null
+*/
+
 
 for(i in 0..2) { print 'ho ' }
 println 'Merry Groovy!'
 
 // The upto() method accepts a closure as a parameter. 
-//If the closure expects only one parameter, we can use the default name it for it in Groovy.
+//If the closure expects only one parameter, we can use the default name 'it' for it in Groovy.
 print 'loop with upto: '
 0.upto(2) { print "$it "} //$ gives param sub
 
@@ -131,9 +161,79 @@ println "$nameX  $nameY"  //nameX is null. we get a
 
 
 //2.6 Implementing Interfaces
+//we don't have to impl all methods on i/f => this is good for Mocking
+//use 'as' operator if we know type at compile time
+new JButton().addActionListener( 
+	{ JOptionPane.showMessageDialog(null, "You clicked!") } as ActionListener //no need for anon class impl and method - The i/f has a single method
+)
+
+//one close for many many methods on many interfaces
+displayMouseLocation = { positionLabel.setText("$it.x, $it.y") } //$it is var for where there is a single param to a closure
+new JFrame().addMouseListener(displayMouseLocation as MouseListener) //provide impl for every method
+new JFrame().addMouseMotionListener(displayMouseLocation as MouseMotionListener) //provide impl for every method
+
+//supply impl for multiple methods using map of closures, keyed by method name
+handleFocusMap = [
+	focusGained : { msgLabel.setText("Good to see you!") }, 
+	focusLost : { msgLabel.setText("Come back soon!") }
+]
+new JButton().addFocusListener(handleFocusMap as FocusListener)
+
+// use 'aClosure.asType()' to set impl for classtype only known at runtime
+events = ['WindowListener', 'ComponentListener'] // Above list may be dynamic and may come from some input 
+handlerClosure = { msgLabel.setText("$it") }
+println "closure class is " + handlerClosure.getClass().name
+for (event in events) {
+	handlerImpl = handlerClosure.asType(Class.forName("java.awt.event.${event}"))
+	new JFrame()."add${event}"(handlerImpl) 
+}
+
+"System.out".println("code statement can be built in a String")
 
 
+//2.7 Groovy Boolean Evaluation
+//implementing an asBoolean() method in our own classes.
+if ('hello') { println 'hello' }
+if (null) { println 'null' }
+if (true) { println 'true' }
+if (false) { println 'false' }
+if (1) { println '1' }
+if (0) { println '0' }
+println 'empty list treated as ' + ([] ? 'true' : 'false') 
 
 
+//2.8 Operator Overloading
+for(ch = 'a'; ch < 'd'; ch++) { 
+	print ch + ","
+}
 
+// '<<' is mapped to leftShift() groovy method on Collections
+lst = ['\nhello'] 
+lst << 'there' 
+println lst
+
+
+class ComplexNumber { 
+	def real, imaginary 
+	
+	def plus(other) { // overrides '+' for an Object type
+		new ComplexNumber(real: real + other.real, imaginary: imaginary + other.imaginary) //using default groovy ctor with map of fieldname:values
+	}
+	
+	String toString() { 
+		"$real ${imaginary > 0 ? '+' : ''} ${imaginary}i"
+	} 
+}
+
+c1 = new ComplexNumber(real: 1, imaginary: 2)
+c2 = new ComplexNumber(real: 4, imaginary: 1) 
+println "override +: " + (c1 + c2)
+
+
+//2.9 Support of Java 5 Language Features
+//Groovy automatically treats primitives as objects where necessary
+//Primitives are treated as objects only where necessary—for instance, 
+//if we invoke methods on them or pass them to object references. Otherwise, Groovy retains them as primitive types at the bytecode level.
+def int i = 5
+println i.getClass().name
 
