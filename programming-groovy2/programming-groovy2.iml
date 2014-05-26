@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$MODULE_DIR$/../../../apps/springsource/sts-3.4.0.RELEASE/plugins/org.codehaus.groovy_2.1.8.xx-201403261719-e43j8/lib/groovy-all-2.1.8.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/../../../apps/springsource/sts-3.4.0.RELEASE/plugins/org.codehaus.groovy_2.1.8.xx-201403261719-e43j8/lib/ivy-2.2.0-sources.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/../../../apps/springsource/sts-3.4.0.RELEASE/plugins/org.codehaus.groovy_2.1.8.xx-201403261719-e43j8/lib/ivy-2.2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/../../../apps/springsource/sts-3.4.0.RELEASE/plugins/org.codehaus.groovy_2.1.8.xx-201403261719-e43j8/lib/servlet-api-2.4.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/../../../apps/springsource/sts-3.4.0.RELEASE/plugins/org.codehaus.groovy_2.1.8.xx-201403261719-e43j8/lib/bsf-2.4.0.jar!/" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
+      <src_folder value="GROOVY_DSL_SUPPORT" expected_position="2" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/bin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
+    <orderEntry type="module-library">
+      <library name="groovy-all-2.1.8.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../apps/springsource/sts-3.4.0.RELEASE/plugins/org.codehaus.groovy_2.1.8.xx-201403261719-e43j8/lib/groovy-all-2.1.8.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../../../apps/springsource/sts-3.4.0.RELEASE/plugins/org.codehaus.groovy_2.1.8.xx-201403261719-e43j8/lib/groovy-2.1.8-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="ivy-2.2.0-sources.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../apps/springsource/sts-3.4.0.RELEASE/plugins/org.codehaus.groovy_2.1.8.xx-201403261719-e43j8/lib/ivy-2.2.0-sources.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="ivy-2.2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../apps/springsource/sts-3.4.0.RELEASE/plugins/org.codehaus.groovy_2.1.8.xx-201403261719-e43j8/lib/ivy-2.2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="servlet-api-2.4.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../apps/springsource/sts-3.4.0.RELEASE/plugins/org.codehaus.groovy_2.1.8.xx-201403261719-e43j8/lib/servlet-api-2.4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="bsf-2.4.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../apps/springsource/sts-3.4.0.RELEASE/plugins/org.codehaus.groovy_2.1.8.xx-201403261719-e43j8/lib/bsf-2.4.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
+

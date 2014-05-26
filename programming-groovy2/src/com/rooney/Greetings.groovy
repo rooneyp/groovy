@@ -9,6 +9,7 @@ import javax.swing.JButton
 import javax.swing.JFrame
 import javax.swing.JOptionPane
 
+// /Users/paul/Dev/books/Programming Groovy 2.pdf
 //Methods and classes are public by default.
 //single quote strings
 //String sub using $xxx
@@ -32,7 +33,7 @@ Object[]		Length greater than 0
 Any other type	Reference not null
 */
 
-
+print 'loop with in: '
 for(i in 0..2) { print 'ho ' }
 println 'Merry Groovy!'
 
