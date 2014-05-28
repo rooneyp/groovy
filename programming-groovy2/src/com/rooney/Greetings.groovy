@@ -48,6 +48,15 @@ print '\niterate with times: '
 print '\niterate with step: '
 0.step(10, 2) { print "$it "}
 
+print '\nforeach on array needing type specified : '
+for(String greet : ["Hello", "Hi", "Howdy"]) {
+    print greet + " "
+}
+//better to use 'in'
+for(greet in ["Hello", "Hi", "Howdy"]) {
+    print greet + " "
+}
+
 
 //use 'execute' to run a command
 println "\n"
@@ -237,4 +246,36 @@ println "override +: " + (c1 + c2)
 //if we invoke methods on them or pass them to object references. Otherwise, Groovy retains them as primitive types at the bytecode level.
 def int i = 5
 println i.getClass().name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
